@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息登记表</title>
+    <style>
+        .form-group {
+            margin: 0.5em auto;
+        }
+
+        #year {
+            width: 3em;
+        }
+
+        #month {
+            width: 2em;
+        }
+
+        #day {
+            width: 2em;
+        }
+
+        .main-form {
+            margin: 0 auto;
+            padding: 1em;
+            max-width: 40em;
+        }
+
+        #submit {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="main-form">
+    <h3 style="text-align: center">学生信息登记表</h3>
+    <form action="#" method="get">
+        <div class="form-group">
+            <label for="name">姓&nbsp;&nbsp;&nbsp;名：</label>
+            <input id="name" name="name" type="text" required/>
+        </div>
+
+        <div class="form-group">
+            <label>性&nbsp;&nbsp;&nbsp;别:</label>
+            <input type="radio" id="male" name="gender" value="male" checked>
+            <label for="male">男</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">女</label>
+        </div>
+
+        <div class="form-group">
+            <label>
+                出生日期：
+                <input type="text" id="year" name="year"/>年 <input type="text" id="month" name="month"/>月 <input
+                    type="text" id="day" name="day"/>日
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>个人爱好：</label>
+            <input type="checkbox" id="travel" value="travel" name="hobbies[]"/>
+            <label for="travel">旅游</label>
+            <input type="checkbox" id="art" value="art" name="hobbies[]"/>
+            <label for="art">艺术</label>
+            <input type="checkbox" id="surf" value="surf" name="hobbies[]"/>
+            <label for="surf">上网</label>
+            <input type="checkbox" id="climb" value="climb" name="hobbies[]"/>
+            <label for="climb">登山</label>
+            <input type="checkbox" id="film" value="film" name="hobbies[]"/>
+            <label for="film">看电影</label>
+            <input type="checkbox" id="others" value="others" name="hobbies[]"/>
+            <label for="others">其它</label>
+        </div>
+        <input type="submit" id="submit" value="提交">
+    </form>
+</div>
+</body>
+</html>
