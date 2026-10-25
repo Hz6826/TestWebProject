@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>判断素数</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById("mainForm").addEventListener("submit", (evt)=>{
+                evt.preventDefault();
+                const num = Number(document.getElementById("numberText").value);
+
+                if (num === 0 || num === 1) {
+                    document.getElementById("resultText").value = "不是素数";
+                }
+
+                const limit = Math.sqrt(num);
+                let isPrime = num > 1 && Number.isInteger(num);
+
+                for (let i = 2; i <= limit; i++) {
+                    if (num % i === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                document.getElementById("resultText").value = isPrime ? "是素数" : "不是素数";
+            })
+        });
+    </script>
+</head>
+<body>
+<h1>判断素数</h1>
+<form id="mainForm">
+    <label for="numberText">整数</label><input type="number" id="numberText" min="0" required/><br>
+    <label for="resultText">结果</label><input type="text" id="resultText" readonly/><br>
+    <input type="submit" id="calcBtn" value="计算"/>
+    <input type="reset" id="clearBtn" value="清空"/>
+</form>
+</body>
+</html>

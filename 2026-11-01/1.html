@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>计算1~100之和</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById("calcBtn").addEventListener('click', () => {
+                let sum = 0;
+                let i = 1;
+                do {
+                    sum += i;
+                    i++;
+                } while (i <= 100);
+                document.getElementById("outputText").value = "1~100之和为: " + sum;
+            })
+        });
+    </script>
+</head>
+<body>
+<h1>计算1~100之和</h1>
+<input type="text" id="outputText" placeholder="请点击计算开始计算结果" readonly/><br>
+<input type="button" id="calcBtn" value="计算"/>
+</body>
+</html>

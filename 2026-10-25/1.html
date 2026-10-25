@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>圆的面积和周长</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById("mainForm").addEventListener(
+                'submit',
+                (e) => {
+                    const r = document.getElementById("radius").value;
+                    document.getElementById("circumference").value = (2 * Math.PI * r).toFixed(2);
+                    document.getElementById("area").value = (Math.PI * r * r).toFixed(2);
+                    e.preventDefault();
+                }
+            )
+        });
+    </script>
+</head>
+<body>
+<h1>圆的面积和周长</h1>
+<form id="mainForm">
+    <label for="radius">半径</label>
+    <input type="number" name="radius" id="radius"/><br>
+    <label for="circumference">周长</label>
+    <input type="number" name="circumference" id="circumference" readonly/><br>
+    <label for="area">面积</label>
+    <input type="number" name="area" id="area" readonly/><br>
+    <input type="submit" id="submitBtn" value="计算"/>
+    <input type="reset" id="clearBtn" value="清空"/>
+</form>
+</body>
+</html>
